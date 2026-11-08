@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">واجهة السيارة</string>
+
+    <string name="all_apps">كل التطبيقات</string>
+    <string name="split_screen">تقسيم الشاشة</string>
+    <string name="map_option">الخريطة</string>
+    <string name="close">إغلاق</string>
+    <string name="recenter">التمركز على موقعي</string>
+    <string name="night_map">الخريطة الليلية</string>
+
+    <string name="hint_browse">اضغط للفتح · اضغط مطولاً للتثبيت في الشريط</string>
+    <string name="pick_first">تقسيم الشاشة · اختر التطبيق الأول</string>
+    <string name="pick_second">تقسيم الشاشة · اختر التطبيق الثاني</string>
+    <string name="hint_split_first">اختر «الخريطة» لإبقائها في أحد الجانبين</string>
+    <string name="hint_split_second">سيفتح هذا التطبيق بجانب الأول</string>
+    <string name="dock_empty">اضغط مطولاً على أي تطبيق في «كل التطبيقات» لتثبيته هنا</string>
+    <string name="pinned">تم التثبيت في الشريط</string>
+    <string name="unpinned">تمت الإزالة من الشريط</string>
+    <string name="cannot_open">تعذّر فتح هذا التطبيق</string>
+
+    <string name="unit_kmh">كم/س</string>
+    <string name="unit_mph">ميل/س</string>
+    <string name="gps_waiting">بانتظار إشارة GPS…</string>
+    <string name="gps_ok">GPS ±%1$d م</string>
+    <string name="gps_off">GPS متوقف</string>
+    <string name="gps_lost">فُقدت إشارة GPS</string>
+    <string name="location_denied">إذن الموقع مطلوب لعرض الخريطة والسرعة</string>
+
+    <string name="split_enable_title">تفعيل مساعد تقسيم الشاشة</string>
+    <string name="split_enable_msg">يحتاج تقسيم الشاشة إلى تفعيل خدمة إمكانية الوصول «واجهة السيارة – تقسيم الشاشة». افتح إعدادات إمكانية الوصول وفعّلها ثم أعد المحاولة. في أندرويد 13 وما بعده قد تحتاج أولاً إلى السماح بالإعدادات المقيّدة من صفحة معلومات التطبيق.</string>
+    <string name="split_unsupported">يتطلب تقسيم الشاشة أندرويد 7.0 أو أحدث</string>
+    <string name="open_settings">فتح الإعدادات</string>
+    <string name="settings_not_found">افتح الإعدادات ثم إمكانية الوصول وفعّل واجهة السيارة – تقسيم الشاشة</string>
+
+    <string name="a11y_label">واجهة السيارة – تقسيم الشاشة</string>
+    <string name="a11y_description">تتيح لواجهة السيارة عرض تطبيقين جنباً إلى جنب. لا تقرأ محتوى شاشتك.</string>
+</resources>

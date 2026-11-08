@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/dock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Speed -->
+    <LinearLayout
+        android:id="@+id/speedCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_speed_card"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:minWidth="132dp"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/speedValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="0"
+            android:textColor="@color/text"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"
+            xmlns:tools="http://schemas.android.com/tools" />
+
+        <TextView
+            android:id="@+id/speedUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unit_kmh"
+            android:textColor="@color/accent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/gpsStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/gps_waiting"
+            android:textColor="@color/text_dim"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnNight"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_round_button"
+        android:contentDescription="@string/night_map"
+        android:padding="14dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_night"
+        android:tint="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnRecenter"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_round_button"
+        android:contentDescription="@string/recenter"
+        android:padding="14dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_my_location"
+        android:tint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/dock"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- App grid / split-screen picker (covers the map) -->
+    <LinearLayout
+        android:id="@+id/drawer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/drawer_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/dock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/drawerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/drawerHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_dim"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnCloseDrawer"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_round_button"
+                android:contentDescription="@string/close"
+                android:padding="14dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_close"
+                android:tint="@color/text" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gridRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <!-- Bottom bar -->
+    <LinearLayout
+        android:id="@+id/dock"
+        android:layout_width="0dp"
+        android:layout_height="92dp"
+        android:background="@color/surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnApps"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="@drawable/bg_dock_button"
+            android:contentDescription="@string/all_apps"
+            android:padding="18dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_apps"
+            android:tint="@color/text" />
+
+        <ImageButton
+            android:id="@+id/btnSplit"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_dock_button"
+            android:contentDescription="@string/split_screen"
+            android:padding="18dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_split"
+            android:tint="@color/accent" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/divider" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dockRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+            <TextView
+                android:id="@+id/dockEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/dock_empty"
+                android:textColor="@color/text_dim"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

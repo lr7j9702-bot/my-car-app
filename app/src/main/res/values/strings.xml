@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Car Launcher</string>
+
+    <string name="all_apps">All apps</string>
+    <string name="split_screen">Split screen</string>
+    <string name="map_option">Map</string>
+    <string name="close">Close</string>
+    <string name="recenter">Center on my location</string>
+    <string name="night_map">Night map</string>
+
+    <string name="hint_browse">Tap to open · long-press to pin to the bar</string>
+    <string name="pick_first">Split screen · choose the first app</string>
+    <string name="pick_second">Split screen · choose the second app</string>
+    <string name="hint_split_first">Choose “Map” to keep the map on one side</string>
+    <string name="hint_split_second">This app opens beside the first one</string>
+    <string name="dock_empty">Long-press any app in All apps to pin it here</string>
+    <string name="pinned">Pinned to the bar</string>
+    <string name="unpinned">Removed from the bar</string>
+    <string name="cannot_open">Cannot open this app</string>
+
+    <string name="unit_kmh">km/h</string>
+    <string name="unit_mph">mph</string>
+    <string name="gps_waiting">Waiting for GPS…</string>
+    <string name="gps_ok">GPS ±%1$d m</string>
+    <string name="gps_off">GPS is off</string>
+    <string name="gps_lost">GPS signal lost</string>
+    <string name="location_denied">Location permission is needed for the map and speed</string>
+
+    <string name="split_enable_title">Turn on the split-screen helper</string>
+    <string name="split_enable_msg">Split screen needs the “Car Launcher split screen” accessibility service. Open Accessibility settings, turn it on, then try again. On Android 13 and newer you may first need to allow restricted settings from the app info page.</string>
+    <string name="split_unsupported">Split screen needs Android 7.0 or newer</string>
+    <string name="open_settings">Open settings</string>
+    <string name="settings_not_found">Open Settings, then Accessibility, and turn on Car Launcher split screen</string>
+
+    <string name="a11y_label">Car Launcher split screen</string>
+    <string name="a11y_description">Lets Car Launcher show two apps side by side. It does not read your screen.</string>
+</resources>
